@@ -1,0 +1,16 @@
+<launch>
+
+<node pkg="parameter_tuning" type="parameter_tuner_node.py" name="parameter_tuning_node">
+  </node>
+
+<include file="$(find parameter_tuning)/launch/parameter_tuner.launch">
+	<arg name="dynreconfigure_name" value="parameter_tuning_node"/>
+	<arg name="image_topic" value="/camera_front/rgb/image_raw"/>
+	<arg name="hz" value="10"/>
+	<arg name="scale" value="1."/>
+	<arg name="config" value="configs/ppliteseg_hannasscapes.yml"/>
+	<arg name="labels" value="weights/ppliteseg_hannasscapes/labels.json"/>
+	<arg name="device" value="cpu"/>
+</include>
+
+</launch>

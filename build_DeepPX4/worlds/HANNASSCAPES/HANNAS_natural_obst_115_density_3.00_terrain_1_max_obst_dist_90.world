@@ -1,0 +1,7937 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<sdf version="1.6">
+
+   <world name="default">
+
+      <gui fullscreen="0">
+
+         <camera name="user_camera">
+
+            <pose>-15 0 4.57585 0 0 0</pose>
+
+            <view_controller>orbit</view_controller>
+
+         </camera>
+
+      </gui>
+
+      <scene>
+
+         <sky>
+
+           <clouds>
+
+             <speed>12</speed>
+
+           </clouds>
+
+         </sky>
+
+         <ambient>0.4 0.4 0.4 1</ambient>
+
+         <background>0.7 0.7 0.7 1</background>
+
+         <shadows>1</shadows>
+
+      </scene>
+
+      <gravity>0 0 -9.8066</gravity>
+
+      <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+
+      <physics default="0" name="default_physics" type="ode">
+
+         <ode>
+
+            <solver>
+
+               <type>quick</type>
+
+               <iters>10</iters>
+
+               <sor>1.0</sor>
+
+               <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
+
+            </solver>
+
+            <constraints>
+
+               <cfm>0</cfm>
+
+               <erp>0.2</erp>
+
+               <contact_max_correcting_vel>100</contact_max_correcting_vel>
+
+               <contact_surface_layer>0.001</contact_surface_layer>
+
+            </constraints>
+
+         </ode>
+
+         <max_step_size>0.004</max_step_size>
+
+         <real_time_factor>1</real_time_factor>
+
+         <real_time_update_rate>250</real_time_update_rate>
+
+      </physics>
+
+      <light name="sun" type="directional">
+
+         <cast_shadows>1</cast_shadows>
+
+         <pose>0 0 10 0 0 0</pose>
+
+         <diffuse>0.8 0.8 0.8 1</diffuse>
+
+         <specular>0.2 0.2 0.2 1</specular>
+
+         <attenuation>
+
+            <range>1000</range>
+
+            <constant>0.9</constant>
+
+            <linear>0.01</linear>
+
+            <quadratic>0.001</quadratic>
+
+         </attenuation>
+
+         <direction>-0.5 0.1 -0.9</direction>
+
+      </light>
+
+      <include>
+
+         <name>ground_plane_1</name>
+
+         <uri>model://HANNAS_ground_plane</uri>
+
+         <pose>0 0 0  0 0 0</pose>
+
+      </include>
+
+      <include>
+
+         <name>ground_plane_2</name>
+
+         <uri>model://HANNAS_ground_plane</uri>
+
+         <pose>100 0 0  0 0 0</pose>
+
+      </include>
+
+      <model name="oak_tree_1">
+
+         <static>1</static>
+
+         <pose frame="">62.6105 -1.7013 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_2">
+
+         <static>1</static>
+
+         <pose frame="">12.4992 66.0532 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_3">
+
+         <static>1</static>
+
+         <pose frame="">80.8217 86.6491 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_4">
+
+         <static>1</static>
+
+         <pose frame="">81.6527 -66.9952 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_5">
+
+         <static>1</static>
+
+         <pose frame="">20.7152 56.4225 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_6">
+
+         <static>1</static>
+
+         <pose frame="">50.6468 52.5979 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_7">
+
+         <static>1</static>
+
+         <pose frame="">57.8885 48.0864 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_8">
+
+         <static>1</static>
+
+         <pose frame="">85.1847 29.5245 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_9">
+
+         <static>1</static>
+
+         <pose frame="">68.3720 -44.7880 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_10">
+
+         <static>1</static>
+
+         <pose frame="">15.9138 49.5226 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_11">
+
+         <static>1</static>
+
+         <pose frame="">65.9732 36.3515 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_12">
+
+         <static>1</static>
+
+         <pose frame="">26.6461 75.3170 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_13">
+
+         <static>1</static>
+
+         <pose frame="">46.3721 11.6130 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_14">
+
+         <static>1</static>
+
+         <pose frame="">60.2180 33.7354 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_15">
+
+         <static>1</static>
+
+         <pose frame="">13.8996 86.3933 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_16">
+
+         <static>1</static>
+
+         <pose frame="">13.0616 -39.3185 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_17">
+
+         <static>1</static>
+
+         <pose frame="">45.7591 57.2165 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_18">
+
+         <static>1</static>
+
+         <pose frame="">22.4159 -85.3086 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_19">
+
+         <static>1</static>
+
+         <pose frame="">85.3076 -20.1113 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_20">
+
+         <static>1</static>
+
+         <pose frame="">78.3546 48.3324 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_21">
+
+         <static>1</static>
+
+         <pose frame="">80.9276 35.5667 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_22">
+
+         <static>1</static>
+
+         <pose frame="">61.4045 -11.3803 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_23">
+
+         <static>1</static>
+
+         <pose frame="">48.7133 -4.8766 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_24">
+
+         <static>1</static>
+
+         <pose frame="">55.8241 39.8500 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_25">
+
+         <static>1</static>
+
+         <pose frame="">50.9396 -35.6225 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_26">
+
+         <static>1</static>
+
+         <pose frame="">41.0075 -28.9890 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_27">
+
+         <static>1</static>
+
+         <pose frame="">29.9395 -11.0093 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_28">
+
+         <static>1</static>
+
+         <pose frame="">16.4747 -63.9603 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_29">
+
+         <static>1</static>
+
+         <pose frame="">78.5610 11.6528 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_30">
+
+         <static>1</static>
+
+         <pose frame="">16.2454 23.5295 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_31">
+
+         <static>1</static>
+
+         <pose frame="">47.4860 63.9031 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_32">
+
+         <static>1</static>
+
+         <pose frame="">83.5488 -31.3939 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_33">
+
+         <static>1</static>
+
+         <pose frame="">86.1115 42.0178 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_34">
+
+         <static>1</static>
+
+         <pose frame="">15.3731 -24.5938 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_35">
+
+         <static>1</static>
+
+         <pose frame="">42.8269 87.4381 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_36">
+
+         <static>1</static>
+
+         <pose frame="">71.9723 9.9703 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_37">
+
+         <static>1</static>
+
+         <pose frame="">59.8854 -73.6981 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_38">
+
+         <static>1</static>
+
+         <pose frame="">63.0135 -84.4598 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_39">
+
+         <static>1</static>
+
+         <pose frame="">53.7463 88.3474 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_40">
+
+         <static>1</static>
+
+         <pose frame="">29.7593 -30.8350 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_41">
+
+         <static>1</static>
+
+         <pose frame="">89.8708 29.1267 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_42">
+
+         <static>1</static>
+
+         <pose frame="">25.9870 12.3278 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_43">
+
+         <static>1</static>
+
+         <pose frame="">36.8581 -82.1313 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_44">
+
+         <static>1</static>
+
+         <pose frame="">82.0271 -45.2118 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_45">
+
+         <static>1</static>
+
+         <pose frame="">10.8289 -65.2910 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_46">
+
+         <static>1</static>
+
+         <pose frame="">28.5126 -21.5585 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_47">
+
+         <static>1</static>
+
+         <pose frame="">84.9113 -83.7521 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_48">
+
+         <static>1</static>
+
+         <pose frame="">39.0093 -57.9149 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_49">
+
+         <static>1</static>
+
+         <pose frame="">87.6232 14.5463 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_50">
+
+         <static>1</static>
+
+         <pose frame="">38.2891 74.3906 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_51">
+
+         <static>1</static>
+
+         <pose frame="">80.9853 -57.7194 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_52">
+
+         <static>1</static>
+
+         <pose frame="">73.6264 74.2110 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_53">
+
+         <static>1</static>
+
+         <pose frame="">72.8572 56.2537 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_54">
+
+         <static>1</static>
+
+         <pose frame="">57.9815 72.0581 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_55">
+
+         <static>1</static>
+
+         <pose frame="">10.2545 -48.3285 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_56">
+
+         <static>1</static>
+
+         <pose frame="">85.4445 25.2103 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_57">
+
+         <static>1</static>
+
+         <pose frame="">49.7775 21.9043 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_58">
+
+         <static>1</static>
+
+         <pose frame="">17.1001 -47.4332 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_59">
+
+         <static>1</static>
+
+         <pose frame="">9.4312 58.8252 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_60">
+
+         <static>1</static>
+
+         <pose frame="">48.3941 2.2595 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+      <model name="oak_tree_61">
+
+         <static>1</static>
+
+         <pose frame="">26.5491 -57.1699 0 0.000000 0.000000 1.570796</pose>
+
+         <link name="link">
+
+            <pose frame="">0 0 0.00 0 0 0</pose>
+
+            <collision name="collision">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                  </mesh>
+
+               </geometry>
+
+               <max_contacts>10</max_contacts>
+
+               <surface>
+
+                  <contact>
+
+                     <ode/>
+
+                  </contact>
+
+                  <bounce/>
+
+                  <friction>
+
+                     <torsional>
+
+                        <ode/>
+
+                     </torsional>
+
+                     <ode/>
+
+                  </friction>
+
+               </surface>
+
+            </collision>
+
+            <visual name="branch">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Branch</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures</uri>
+
+                     <name>OakTree/Branch</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <visual name="bark">
+
+               <geometry>
+
+                  <mesh>
+
+                     <uri>model://oak_tree/meshes/oak_tree.dae</uri>
+
+                     <submesh>
+
+                        <name>Bark</name>
+
+                     </submesh>
+
+                  </mesh>
+
+               </geometry>
+
+               <material>
+
+                  <script>
+
+                     <uri>model://oak_tree/materials/scripts/</uri>
+
+                     <uri>model://oak_tree/materials/textures/</uri>
+
+                     <name>OakTree/Bark</name>
+
+                  </script>
+
+               </material>
+
+            </visual>
+
+            <self_collide>0</self_collide>
+
+            <enable_wind>0</enable_wind>
+
+            <kinematic>0</kinematic>
+
+         </link>
+
+      </model>
+
+   </world>
+
+</sdf>
